@@ -22,7 +22,6 @@
             <li><a href="#inicio"><i class="fas fa-home"></i> Início</a></li>
             <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
             <li><a href="#servicos"><i class="fas fa-tools"></i> Serviços</a></li>
-            <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
         </ul>
     </nav>
 
@@ -41,13 +40,24 @@
         </div>
     </div>
 
-    <section class="about-section" id="sobre">
+    <!-- Nova seção com imagem à esquerda -->
+    <section class="image-section">
         <div class="container">
-            <h2>Sobre Nós</h2>
-            <p>Somos especialistas em transformar espaços externos em ambientes incríveis. Com anos de experiência, nossa equipe está pronta para criar o paraíso que você sempre sonhou.</p>
+            <div class="image-content">
+                <div class="image-wrapper">
+                    <img src="imagens/inicio1.png" alt="Imagem ilustrativa">
+                </div>
+                <div class="text-content">
+                    <h2>Torne o seu sonho realidade com a Master Lagos</h2>
+                    <p>
+                        Oferecemos soluções personalizadas para criar ambientes únicos e cheios de beleza. Desde lagos artificiais até paisagismo, nossa equipe está pronta para transformar seu espaço em um verdadeiro paraíso natural.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Seção Serviços -->
     <section class="services-section" id="servicos">
         <div class="container">
             <h2>Nossos Serviços</h2>
@@ -61,18 +71,70 @@
         </div>
     </section>
 
-    <section class="contact-section" id="contato">
+    <!-- Seção Sobre Nós -->
+    <section class="about-section" id="sobre">
         <div class="container">
-            <h2>Contato</h2>
-            <p>Entre em contato conosco para mais informações ou para solicitar um orçamento.</p>
-            <button class="cta">Fale Conosco</button>
+            <div class="about-content">
+                <!-- Texto à esquerda -->
+                <div class="about-text">
+                    <h2>Sobre Nós</h2>
+                    <p>A Master Lagos é uma empresa especializada em transformar ambientes em verdadeiros paraísos naturais. Atuamos sempre com alta qualidade e dedicação!</p>
+                    <p>Nosso objetivo é ajudar nossos clientes a criar ambientes que atendam às suas necessidades e desejos, garantindo um resultado final que combine funcionalidade, estética e harmonia. Cada projeto é feito com muito cuidado, desde o planejamento até a execução, para que o espaço final seja exatamente o que você imaginou.</p>
+                    <p>Venha conhecer nossos projetos realizados e descobrir como podemos transformar o seu ambiente em um lugar único e especial. Estamos prontos para tornar o seu sonho realidade!</p>
+                </div>
+
+                <!-- Mapa à direita -->
+                <div class="about-map">
+                    <h2>Nossa Localização</h2>
+                    <div class="map-container">
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d338262.43273099203!2d-48.88241305840282!3d-20.493629770713863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bb83f4b867cf69%3A0xc1b82b5883f836ba!2sBarretos%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1741709785438!5m2!1spt-BR!2sbr"
+                          width="100%"
+                          height="300"
+                          style="border:0;"
+                          allowfullscreen=""
+                          loading="lazy"
+                          referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <p class="map-text">Somos de Barretos-SP, mas atendemos em qualquer lugar sob negociação.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <script>
+        // Função para alternar o menu lateral
         function toggleSidebar() {
             document.getElementById("sidebar").classList.toggle("active");
         }
+
+        // Função para verificar se uma seção está na viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Função para adicionar a classe fade-in às seções visíveis (exceto a seção do meio)
+        function handleScroll() {
+            const sections = document.querySelectorAll('section:not(.image-section)'); // Ignora a seção do meio
+            sections.forEach(section => {
+                if (isInViewport(section)) {
+                    section.classList.add('fade-in');
+                }
+            });
+        }
+
+        // Adicionar um listener para o evento de scroll
+        window.addEventListener('scroll', handleScroll);
+
+        // Executar a função ao carregar a página para verificar seções já visíveis
+        document.addEventListener('DOMContentLoaded', handleScroll);
     </script>
 </body>
 </html>
