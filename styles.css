@@ -96,6 +96,7 @@ body {
     display: flex;
     align-items: flex-start;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -114,11 +115,13 @@ body {
     max-width: 1200px;
     margin: 0;
     padding-left: 50px;
+    animation: slideIn 1.5s ease-out forwards;
 }
 
 .logo {
     width: 300px;
     margin-bottom: 20px;
+    border-radius: 15px; /* Bordas arredondadas */
 }
 
 .hero-text {
@@ -128,12 +131,37 @@ body {
 .hero-text h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
+    animation: fadeInUp 1.5s ease-out forwards;
 }
 
 .description {
     margin-top: 20px;
     font-size: 1.1em;
     line-height: 1.8;
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Animação de entrada */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Nova seção com imagem à esquerda */
@@ -158,8 +186,7 @@ body {
 
 .image-wrapper {
     flex: 1;
-    background-color: #ffffff; /* Fundo temporário para depuração */
-    border-radius: 10px;
+    border-radius: 15px; /* Bordas arredondadas */
     overflow: hidden;
 }
 
@@ -167,7 +194,7 @@ body {
     width: 100%;
     max-width: 500px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 15px; /* Bordas arredondadas */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: block;
 }
@@ -243,7 +270,7 @@ body {
 }
 
 .about-text p {
-    margin-bottom: 20px; /* Espaçamento entre os parágrafos */
+    margin-bottom: 20px;
 }
 
 .about-map {
@@ -262,13 +289,13 @@ body {
 
 .map-container iframe {
     width: 100%;
-    height: 300px; /* Mapa reduzido */
+    height: 300px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .map-text {
-    margin-top: 10px; /* Espaçamento acima do texto */
+    margin-top: 10px;
     font-size: 0.9em;
     color: #555;
     text-align: center;
@@ -338,4 +365,5 @@ section:not(.image-section) {
     .description {
         font-size: 1em;
     }
+
 }
