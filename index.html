@@ -67,7 +67,9 @@
                 <li><a href="decks.html">Decks de madeira</a></li>
                 <li><a href="pergolados.html">Pergolados</a></li>
                 <li><a href="piscinas.html">Piscinas naturais</a></li>
-                <li><a href="paisagismo.html">Paisagismo</a></li>
+                <li><a href="paineis.html">Paineis de Madeira</a></li>
+                <li><a href="grutas.html">Grutas</a></li>
+                <li><a href="rochas.html">Rochas Artificiais</a></li>
             </ul>
         </div>
     </section>
@@ -137,5 +139,40 @@
         // Executar a função ao carregar a página para verificar seções já visíveis
         document.addEventListener('DOMContentLoaded', handleScroll);
     </script>
+
+    <script>
+        // Função para alternar o menu lateral
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+
+        // Função para verificar se uma seção está na viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Função para adicionar a classe fade-in às seções visíveis (exceto a seção do meio)
+        function handleScroll() {
+            const sections = document.querySelectorAll('section:not(.image-section)'); // Ignora a seção do meio
+            sections.forEach(section => {
+                if (isInViewport(section)) {
+                    section.classList.add('fade-in');
+                }
+            });
+        }
+
+        // Adicionar um listener para o evento de scroll
+        window.addEventListener('scroll', handleScroll);
+
+        // Executar a função ao carregar a página para verificar seções já visíveis
+        document.addEventListener('DOMContentLoaded', handleScroll);
+    </script>
+
 </body>
 </html>
