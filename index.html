@@ -53,7 +53,6 @@
                     <p>
                         Oferecemos soluções personalizadas para criar ambientes únicos e cheios de beleza. Desde lagos artificiais até paisagismo, nossa equipe está pronta para transformar seu espaço em um verdadeiro paraíso natural.
                     </p>
-                    <!-- Botão do WhatsApp Adicionado -->
                     <a href="https://wa.me/17981795277" target="_blank" class="whatsapp-button">
                         <i class="fab fa-whatsapp"></i>
                         <span>Faça um Orçamento</span>
@@ -67,14 +66,37 @@
 <section class="services-section" id="servicos">
     <div class="container">
         <h2>Nossos Serviços</h2>
+
         <div class="services-grid">
-            <div class="service-ball large"><a href="lagos.html">Lagos artificiais</a></div>
-            <div class="service-ball medium"><a href="decks.html">Decks de madeira</a></div>
-            <div class="service-ball small"><a href="pergolados.html">Pergolados</a></div>
-            <div class="service-ball medium"><a href="piscinas.html">Piscinas naturais</a></div>
-            <div class="service-ball large"><a href="paineis.html">Paineis de Madeira</a></div>
-            <div class="service-ball small"><a href="grutas.html">Grutas</a></div>
-            <div class="service-ball medium"><a href="rochas.html">Rochas Artificiais</a></div>
+
+            <a href="lagos.html" class="service-ball large">
+                Lagos Artificiais
+            </a>
+
+            <a href="decks.html" class="service-ball medium">
+                Decks de Madeira
+            </a>
+
+            <a href="pergolados.html" class="service-ball small">
+                Pergolados
+            </a>
+
+            <a href="piscinas.html" class="service-ball medium">
+                Piscinas Naturais
+            </a>
+
+            <a href="paineis.html" class="service-ball large">
+                Painéis de Madeira
+            </a>
+
+            <a href="grutas.html" class="service-ball small">
+                Grutas
+            </a>
+
+            <a href="rochas.html" class="service-ball medium">
+                Rochas Artificiais
+            </a>
+
         </div>
     </div>
 </section>
@@ -83,7 +105,6 @@
     <section class="about-section" id="sobre">
         <div class="container">
             <div class="about-content">
-                <!-- Texto à esquerda -->
                 <div class="about-text">
                     <h2>Sobre Nós</h2>
                     <p>A Master Lagos é uma empresa especializada em transformar ambientes em verdadeiros paraísos naturais. Atuamos sempre com alta qualidade e dedicação!</p>
@@ -91,7 +112,6 @@
                     <p>Venha conhecer nossos projetos realizados e descobrir como podemos transformar o seu ambiente em um lugar único e especial. Estamos prontos para tornar o seu sonho realidade!</p>
                 </div>
 
-                <!-- Mapa à direita -->
                 <div class="about-map">
                     <h2>Nossa Localização</h2>
                     <div class="map-container">
@@ -112,12 +132,10 @@
     </section>
 
     <script>
-        // Função para alternar o menu lateral
         function toggleSidebar() {
             document.getElementById("sidebar").classList.toggle("active");
         }
 
-        // Função para verificar se uma seção está na viewport
         function isInViewport(element) {
             const rect = element.getBoundingClientRect();
             return (
@@ -128,7 +146,6 @@
             );
         }
 
-        // Função para adicionar a classe fade-in às seções visíveis
         function handleScroll() {
             const sections = document.querySelectorAll('section:not(.image-section)');
             sections.forEach(section => {

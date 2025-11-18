@@ -464,6 +464,43 @@ section:not(.image-section) {
     color: #ccc;
 }
 
+/* Botão WhatsApp */
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366; /* Verde oficial do WhatsApp */
+    color: white !important;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    border: 2px solid #25D366;
+    font-family: 'Poppins', sans-serif;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* Verde mais escuro no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(18, 140, 126, 0.3);
+}
+
+.whatsapp-button i {
+    font-size: 1.4em;
+}
+
+/* Consistência no footer */
+.social-links .fa-whatsapp {
+    color: #25D366 !important;
+    transition: color 0.3s ease;
+}
+
+.social-links .fa-whatsapp:hover {
+    color: #128C7E !important;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .image-content {
@@ -546,4 +583,6 @@ section:not(.image-section) {
         width: 80px;
         height: 80px;
     }
+
+
 }
