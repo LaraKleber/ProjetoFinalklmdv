@@ -13,6 +13,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Topbar */
 .topbar {
     position: fixed;
@@ -266,7 +270,8 @@ body {
 
 .service-ball:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #3a5545;
 }
 
 /* Tamanhos das bolas */
@@ -559,30 +564,97 @@ section:not(.image-section) {
         justify-content: center;
     }
 
+    /* --- INÍCIO DO CÓDIGO ATUALIZADO PARA OS SERVIÇOS --- */
+
+    /* Ajuste do título para o novo layout */
+    .services-section h2 {
+        top: -20px; /* Ajuste fino para o título não colidir */
+        font-size: 1.8em;
+    }
+
+    /* Container com layout de grade dinâmica */
     .services-grid {
-        flex-direction: column;
-        align-items: center;
+        display: grid; /* Ativa o modo Grid */
+        grid-template-columns: 1fr 1fr; /* Define 2 colunas de igual tamanho */
+        gap: 20px; /* Espaço entre os itens da grade */
+        justify-items: center; /* Centraliza os itens na horizontal por padrão */
+        padding-top: 20px;
+        position: relative; /* Garante que o grid não quebre */
     }
 
+    /* Estilo base para todas as bolas */
     .service-ball {
-        position: static;
-        margin-bottom: 20px;
+        position: static !important; /* Remove o posicionamento absoluto */
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        
+        /* Tamanho padrão para a maioria das bolas */
+        width: 120px !important;
+        height: 120px !important;
+        font-size: 0.9em;
+        margin-bottom: 0; /* Margem não é necessária no Grid */
     }
 
-    .service-ball.large {
-        width: 120px;
-        height: 120px;
+    /* --- A MÁGICA ACONTECE AQUI: PERSONALIZANDO CADA BOLA --- */
+
+    /* 1ª Bola (Lagos): Maior e ocupando as duas colunas */
+    .services-grid .service-ball:nth-child(1) {
+        grid-column: 1 / -1; /* Faz a bola ocupar da 1ª à última coluna */
+        width: 180px !important;
+        height: 180px !important;
+        font-size: 1em;
     }
 
-    .service-ball.medium {
-        width: 100px;
-        height: 100px;
+    /* 2ª Bola (Decks): Alinhada à direita */
+    .services-grid .service-ball:nth-child(2) {
+        justify-self: end; /* Alinha à direita do seu espaço na grade */
     }
 
-    .service-ball.small {
-        width: 80px;
-        height: 80px;
+    /* 3ª Bola (Pergolados): Menor e alinhada à esquerda */
+    .services-grid .service-ball:nth-child(3) {
+        justify-self: start; /* Alinha à esquerda */
+        width: 100px !important;
+        height: 100px !important;
     }
 
+    /* 4ª Bola (Piscinas): Mantém o tamanho padrão, centralizada */
+    /* (Nenhuma regra necessária, ela usa o estilo base) */
+
+    /* 5ª Bola (Painéis): Menor e centralizada */
+    .services-grid .service-ball:nth-child(5) {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    /* 6ª Bola (Grutas): Maior, ocupando as duas colunas */
+    .services-grid .service-ball:nth-child(6) {
+        grid-column: 1 / -1;
+        width: 160px !important;
+        height: 160px !important;
+    }
+
+    /* 7ª Bola (Rochas): Alinhada à direita */
+    .services-grid .service-ball:nth-child(7) {
+        justify-self: end;
+    }
+
+    /* --- FIM DA MÁGICA --- */
+
+    /* Para Chrome, Edge e Safari */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #4a6b57; /* Cor verde do seu site */
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3a5545;
+}
 
 }
